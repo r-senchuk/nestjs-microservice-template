@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  template:
+    container_name: template
+    build:
+      context: .
+      target: development
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - ${HTTP_PORT}:${HTTP_PORT}
+#      - 9229:9229
+    # these two command keeps apline container running
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    depends_on:
+      - template_db
