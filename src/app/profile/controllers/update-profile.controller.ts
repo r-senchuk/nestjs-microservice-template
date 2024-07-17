@@ -5,8 +5,6 @@ import {
   Request,
   HttpCode,
   HttpStatus,
-  UseInterceptors,
-  UploadedFiles,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { ROUTES, TAGS } from '../../../constants';
