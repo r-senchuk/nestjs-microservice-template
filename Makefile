@@ -1,5 +1,5 @@
-DOCKER_COMPOSE_DEV ?= docker-compose -f docker-compose.dev.yml -f docker-compose.db.yml -f docker-compose.db-test.yml
-DOCKER_COMPOSE_PROD ?= docker-compose -f docker-compose.yml -f docker-compose.db.yml
+DOCKER_COMPOSE_DEV ?= docker-compose -f docker-compose.dev.yml -f docker-compose.db.yml -f docker-compose.db-test.yml -f docker-compose.kafka.yml -f docker-compose.kafka-test.yml
+DOCKER_COMPOSE_PROD ?= docker-compose -f docker-compose.yml -f docker-compose.db.yml -f docker-compose.kafka.yml
 EXEC_SERVICE ?= docker exec -ti template
 DOCKER_COMPOSE_ADMINER ?= docker-compose -f docker-compose.adminer.yml
 

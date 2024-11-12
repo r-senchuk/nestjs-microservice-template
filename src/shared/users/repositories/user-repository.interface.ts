@@ -7,6 +7,10 @@ export interface UserRepositoryInterface {
 
   getOneById(id: string): Promise<UserModel>;
 
+  findOneByEmail(email: string): Promise<UserModel | null>;
+
+  getOneByEmail(email: string): Promise<UserModel>;
+
   insert(user: UserModel): Promise<void>;
 
   update(user: UserModel): Promise<void>;

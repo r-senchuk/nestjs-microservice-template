@@ -21,4 +21,6 @@ export const validationSchema = Joi.object({
   [PARAMETERS.DB_NAME]: Joi.string().required(),
   [PARAMETERS.JWT_AUTH_ALGORITHM]: Joi.string().required(),
   [PARAMETERS.JWT_AUTH_PUBLIC_KEY]: Joi.string().required(),
+  [PARAMETERS.KAFKA_CONSUMER]: Joi.string().required(),
+  [PARAMETERS.KAFKA_PRODUCER]: Joi.string().required(),
 });

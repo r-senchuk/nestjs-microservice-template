@@ -4,3 +4,5 @@ export enum NODE_ENV {
   test = 'test',
   provision = 'provision',
 }
+
+export const USERS_CREATED_TOPIC = 'users.created';

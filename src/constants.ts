@@ -10,5 +10,7 @@ export const ROUTES = {
   PROFILE_UPDATE_PROFILE: 'profile',
 
   USERS_GET_USERS: 'users',
+  USERS_CREATE_USER: 'users',
   USERS_GET_USER: 'users/:id',
 };
+export const APP_ID = 'template-app';
