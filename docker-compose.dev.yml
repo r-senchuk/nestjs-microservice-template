@@ -12,7 +12,7 @@ services:
       - /usr/src/app/node_modules
     ports:
       - ${HTTP_PORT}:${HTTP_PORT}
-#      - 9229:9229
+      - 9229:9229
     # these two command keeps apline container running
     stdin_open: true # docker run -i
     tty: true # docker run -t

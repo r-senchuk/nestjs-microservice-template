@@ -31,6 +31,21 @@ export class UserRepository implements UserRepositoryInterface {
     return user;
   }
 
+  async findOneByEmail(email: string): Promise<UserModel | null> {
+    return this.userRepository.findOne({
+      where: { email },
+    });
+  }
+
+  async getOneByEmail(email: string): Promise<UserModel> {
+    const user = await this.findOneByEmail(email);
+    if (!user) {
+      throw new UserNotFoundException(`User is not found by email "${email}"`);
+    }
+
+    return user;
+  }
+
   async insert(user: UserModel): Promise<void> {
     await this.userRepository.insert(user);
   }

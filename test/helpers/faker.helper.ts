@@ -14,3 +14,11 @@ export const genTimeStamp = () => {
 export const genSign = () => {
   return faker.string.alphanumeric({ length: 40 });
 };
+
+export const genEmail = (): string => {
+  return faker.internet.email();
+};
+
+export const genNickname = (): string => {
+  return faker.internet.userName();
+};

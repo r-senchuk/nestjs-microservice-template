@@ -18,6 +18,9 @@ export const UserSchema = new EntitySchema<UserModel>({
     email: {
       type: String,
     },
+    nickname: {
+      type: String,
+    },
     password: {
       type: String,
     },
