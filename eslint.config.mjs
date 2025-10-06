@@ -15,6 +15,7 @@ export default tseslint.config(
       'unused-imports': unusedImports,
     },
     rules: {
+      "linebreak-style": "off"
       'no-unused-vars': 'off', // or "@typescript-eslint/no-unused-vars": "off",
       'unused-imports/no-unused-imports': 'error',
       'unused-imports/no-unused-vars': [

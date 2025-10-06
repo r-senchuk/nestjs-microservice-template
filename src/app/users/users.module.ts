@@ -12,13 +12,22 @@ import PARAMETERS from '../../shared/params/params.constants';
 import { CreateUserController } from './controllers/create-user.controller';
 import { CreateUserUseCase } from './use-cases/create-user.use-case';
 import { ClientKafka, ClientsModule, Transport } from '@nestjs/microservices';
+import { HashInterface } from './services/hash.interface';
+import { HashService } from './services/hash.service';
+import { ChangeUserPasswordUseCase } from './use-cases/change-user-password.use-case';
+import { ChangeUserPasswordController } from './controllers/change-user-password.controller';
 
 @Module({
-  controllers: [GetUserController, GetUsersController, CreateUserController],
+  controllers: [GetUserController, GetUsersController, CreateUserController, ChangeUserPasswordController],
   providers: [
     GetUserUseCase,
     GetUsersUseCase,
     CreateUserUseCase,
+    ChangeUserPasswordUseCase,
+    {
+      provide: HashInterface,
+      useClass: HashService,
+    },
     {
       provide: UsersResponseFactoryInterface,
       useClass: UsersResponseFactoryService,

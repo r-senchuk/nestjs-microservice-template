@@ -12,5 +12,6 @@ export const ROUTES = {
   USERS_GET_USERS: 'users',
   USERS_CREATE_USER: 'users',
   USERS_GET_USER: 'users/:id',
+  USERS_CHANGE_USER_PASSWORD: 'users/:id/password',
 };
 export const APP_ID = 'template-app';

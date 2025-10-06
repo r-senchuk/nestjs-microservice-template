@@ -7,6 +7,7 @@ import { USERS_CREATED_TOPIC } from '../../../common/constants';
 import { UserAlreadyExistsException } from '../exceptions/user-already-exists.exception';
 import { UserFactoryInterface } from '../../../shared/users/factories/user-factory.interface';
 import { lastValueFrom } from 'rxjs';
+import {HashInterface} from "../services/hash.interface";
 
 @Injectable()
 export class CreateUserUseCase {
@@ -19,6 +20,9 @@ export class CreateUserUseCase {
 
     @Inject(UserFactoryInterface)
     private readonly userFactory: UserFactoryInterface,
+
+    @Inject(HashInterface)
+    private readonly hashService: HashInterface,
   ) {}
 
   async execute(request: CreateUserRequest): Promise<void> {
@@ -30,7 +34,7 @@ export class CreateUserUseCase {
     }
 
     const newUser = this.userFactory.createUser(
-      request.password,
+      await this.hashService.hash(request.password),
       request.nickname,
       request.email,
     );
